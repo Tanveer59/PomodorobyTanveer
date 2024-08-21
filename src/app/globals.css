@@ -2,10 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Babas';
+  src: url('/Bebas_Neue/Babas.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url('/Roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-medium';
+  src: url('/Roboto/Roboto-Medium.ttf');
+}
+
+.Roboto-Light{
+  font-family: 'Roboto-Light';
+  letter-spacing: 0.5px;
+}
+
+.Roboto-bold{
+  font-family: 'Roboto-bold';
+  letter-spacing: 0.5px;
+}
+
+.babas{
+  font-family: "Babas";
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: red;
+  --background-start-rgb: red;
+  --background-end-rgb: red;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,17 +51,82 @@
 }
 
 body {
+ 
+}
+@keyframes pulse {
+  0% {
+    background: linear-gradient(180deg, rgb(192, 15, 15) 43%, rgba(255,43,43,0.75) 100%);
+  }
+  25% {
+    background: linear-gradient(180deg, rgba(255,75,75,1) 43%, rgba(255,53,53,0.75) 100%);
+  }
+  50% {
+    background: linear-gradient(180deg, rgba(255,85,85,1) 43%, rgba(255,63,63,0.75) 100%);
+  }
+  75% {
+    background: linear-gradient(180deg, rgba(255,75,75,1) 43%, rgba(255,53,53,0.75) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, rgba(255,65,65,1) 43%, rgba(255,43,43,0.75) 100%);
+  }
+}
+
+main {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #6d1313;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.smooth-transition {
+  animation: smooth 0.5s ease-out;
+}
+
+
+@keyframes smooth {
+  0%{
+    opacity: 0;
+  }100%{
+    opacity: 1;
+  }
+  
+}
+
+.b-shadow{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.btn-shodow:hover{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+}
+
+.cls{
+  width: 100%;
+}
+
+input::placeholder{
+  font-family: 'Roboto-Light';
+  letter-spacing: 0.5px;
+  padding-left: 5px;
+
+}
+
+textarea::placeholder{
+  font-family: 'Roboto-Light';
+  letter-spacing: 1px;
+}
+
+.addBody {
+  transition: background-color 0.5s ease; /* Smooth transition to the normal color */
+}
+
+
+.addBody:hover{
+  transition: background-color 0.5s ease; 
 }
